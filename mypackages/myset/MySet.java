@@ -1,6 +1,5 @@
 package mypackages.myset;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.List;
@@ -30,24 +29,7 @@ public class MySet<T> implements Set<T>{
     public boolean contains(Object o) {
         return mySet.contains(o);
     }
-
-    @Override
-    public Iterator iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
-    }
-
-    @Override
-    public Object[] toArray() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'toArray'");
-    }
-
-    @Override
-    public Object[] toArray(Object[] a) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'toArray'");
-    }
+    
 
     @Override
     public boolean add(T e) {
@@ -70,9 +52,8 @@ public class MySet<T> implements Set<T>{
     }
 
     @Override
-    public boolean retainAll(Collection c) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'retainAll'");
+    public boolean retainAll(Collection<?> c) {
+        return mySet.retainAll(c);
     }
 
     @Override
@@ -83,5 +64,22 @@ public class MySet<T> implements Set<T>{
     @Override
     public void clear() {
         mySet.clear();
+    }
+
+    @Override
+    public <T> T[] toArray(T[] a) {
+        return mySet.toArray(a);
+    }
+
+
+    @Override
+    public Iterator<T> iterator() {
+        return mySet.iterator();
+    }
+
+
+    @Override
+    public Object[] toArray() {
+        return mySet.toArray();
     }    
 }
